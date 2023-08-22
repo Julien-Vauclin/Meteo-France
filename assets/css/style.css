@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+body{
+    background-color:rgb(168, 209, 248);
+    font-family: 'Days One', sans-serif;
+}
+.bouton{
+    margin-top: 25px;
+    border: none;
+}
+.toggler{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+.datedujour{
+    margin-top: 25px;
+}
+.navbarmenu{
+    text-align: right;
+}
+.navbar-nav{
+    margin-right: 50px;
+    margin-top: 50px;
+}
+/* Scroll horizontal */
+.container {
+    width: 500px;
+    height: 150px;
+    border: 1px solid #ccc;
+    overflow-x: scroll;
+}
+.content {
+    width: 250px;
+    background-color: #ccc;
+    text-align: center;
+}
+.myfooter{
+    bottom: 0;
+    margin-bottom: 50px;
+}
