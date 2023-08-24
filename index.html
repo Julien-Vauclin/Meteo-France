@@ -72,11 +72,13 @@
       </div>
     </nav>
     <!-- TEST -->
+    <!-- On désactive le spellcheck (vague rouge qui souligne les fautes) -->
     <div id="bloc">
       <input
         type="text"
         placeholder="ex: Bordeaux"
         id="tag"
+        spellcheck="false"
         onkeypress="toucheEntree(event)"
       />
       <button type="button" id="bouton">Rechercher</button>
@@ -106,88 +108,40 @@
               <!-- Heure -->
               <thead>
                 <tr>
-                  <th scope="col" id="heure1"></th>
-                  <th scope="col" id="heure2"></th>
-                  <th scope="col">02h</th>
-                  <th scope="col">03h</th>
-                  <th scope="col">04h</th>
-                  <th scope="col">05h</th>
-                  <th scope="col">06h</th>
-                  <th scope="col">07h</th>
-                  <th scope="col">08h</th>
-                  <th scope="col">09h</th>
-                  <th scope="col">10h</th>
-                  <th scope="col">11h</th>
-                  <th scope="col">12h</th>
-                  <th scope="col">13h</th>
-                  <th scope="col">14h</th>
-                  <th scope="col">15h</th>
-                  <th scope="col">16h</th>
-                  <th scope="col">17h</th>
-                  <th scope="col">18h</th>
-                  <th scope="col">19h</th>
-                  <th scope="col">20h</th>
-                  <th scope="col">21h</th>
-                  <th scope="col">22h</th>
-                  <th scope="col">23h</th>
+                  <th class="scrollzone" scope="col" id="heure1"></th>
+                  <th class="scrollzone" scope="col" id="heure2"></th>
+                  <th class="scrollzone" scope="col" id="heure3"></th>
+                  <th class="scrollzone" scope="col" id="heure4"></th>
+                  <th class="scrollzone" scope="col" id="heure5"></th>
+                  <th class="scrollzone" scope="col" id="heure6"></th>
+                  <th class="scrollzone" scope="col" id="heure7"></th>
+                  <th class="scrollzone" scope="col" id="heure8"></th>
                 </tr>
               </thead>
               <!-- Icone -->
               <tbody>
                 <tr>
-                  <td id="icon1"></td>
-                  <td id="icon2"></td>
-                  <td>logo3</td>
-                  <td>logo4</td>
-                  <td>logo5</td>
-                  <td>logo6</td>
-                  <td>logo7</td>
-                  <td>logo8</td>
-                  <td>logo9</td>
-                  <td>logo10</td>
-                  <td>logo11</td>
-                  <td>logo12</td>
-                  <td>logo13</td>
-                  <td>logo14</td>
-                  <td>logo15</td>
-                  <td>logo16</td>
-                  <td>logo17</td>
-                  <td>logo18</td>
-                  <td>logo19</td>
-                  <td>logo20</td>
-                  <td>logo21</td>
-                  <td>logo22</td>
-                  <td>logo23</td>
-                  <td>logo24</td>
+                  <td class="scrollzone" id="icon1"></td>
+                  <td class="scrollzone" id="icon2"></td>
+                  <td class="scrollzone" id="icon3"></td>
+                  <td class="scrollzone" id="icon4"></td>
+                  <td class="scrollzone" id="icon5"></td>
+                  <td class="scrollzone" id="icon6"></td>
+                  <td class="scrollzone" id="icon7"></td>
+                  <td class="scrollzone" id="icon8"></td>
                 </tr>
               </tbody>
               <!-- Température -->
               <tfoot>
                 <tr>
-                  <td id="temp1"></td>
-                  <td id="temp2"></td>
-                  <td>temp3</td>
-                  <td>temp4</td>
-                  <td>temp5</td>
-                  <td>temp6</td>
-                  <td>temp7</td>
-                  <td>temp8</td>
-                  <td>temp9</td>
-                  <td>temp10</td>
-                  <td>temp11</td>
-                  <td>temp12</td>
-                  <td>temp13</td>
-                  <td>temp14</td>
-                  <td>temp15</td>
-                  <td>temp16</td>
-                  <td>temp17</td>
-                  <td>temp18</td>
-                  <td>temp19</td>
-                  <td>temp20</td>
-                  <td>temp21</td>
-                  <td>temp22</td>
-                  <td>temp23</td>
-                  <td>temp24</td>
+                  <td class="scrollzone" id="temp1"></td>
+                  <td class="scrollzone" id="temp2"></td>
+                  <td class="scrollzone" id="temp3"></td>
+                  <td class="scrollzone" id="temp4"></td>
+                  <td class="scrollzone" id="temp5"></td>
+                  <td class="scrollzone" id="temp6"></td>
+                  <td class="scrollzone" id="temp7"></td>
+                  <td class="scrollzone" id="temp8"></td>
                 </tr>
               </tfoot>
             </table>
