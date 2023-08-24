@@ -19,17 +19,17 @@ function toucheEntree(event) {
 bouton.addEventListener('click', function () {
   if (tag.value == '') {
     myville.innerHTML = 'Veuillez saisir une ville';
-    div1.innerHTML = '';
-    div2.innerHTML = '';
-    div3.innerHTML = '';
-    div4.innerHTML = '';
-    div5.innerHTML = '';
+    weather.innerHTML = '';
+    temperature.innerHTML = '';
+    humidity.innerHTML = '';
+    wind.innerHTML = '';
+    icon.innerHTML = '';
   } else if (tag != '') {
-    let div1 = document.getElementById('div1');
-    let div2 = document.getElementById('div2');
-    let div3 = document.getElementById('div3');
-    let div4 = document.getElementById('div4');
-    let div5 = document.getElementById('div5');
+    let weather = document.getElementById('weather');
+    let temperature = document.getElementById('temperature');
+    let humidity = document.getElementById('humidity');
+    let wind = document.getElementById('wind');
+    let icon = document.getElementById('icon');
     let url = `https://api.openweathermap.org/data/2.5/forecast?appid=e2e45fe5701de8629a065e6427da0380&q=${tag.value}&lang=fr&units=metric`;
     fetch(url)
       .then((response) => response.json())
@@ -37,26 +37,51 @@ bouton.addEventListener('click', function () {
         console.log(data);
         if (data.cod == '404') {
           myville.innerHTML = "La ville n'existe pas";
-          div1.innerHTML = '';
-          div2.innerHTML = '';
-          div3.innerHTML = '';
-          div4.innerHTML = '';
-          div5.innerHTML = '';
+          weather.innerHTML = '';
+          temperature.innerHTML = '';
+          humidity.innerHTML = '';
+          wind.innerHTML = '';
+          icon.innerHTML = '';
         } else {
           console.log(data.city['name']);
           console.log(data.cod);
           let nomville = data.city['name'];
           myville.innerHTML = nomville.toUpperCase();
           let description = data.list[0]['weather'][0]['description'];
-          div1.innerHTML =
+          weather.innerHTML =
             description.charAt(0).toUpperCase() + description.slice(1);
-          div2.innerHTML = data.list[0]['main']['temp'] + '°C';
-          div3.innerHTML = data.list[0]['main']['humidity'] + "% d'humidité";
-          div4.innerHTML = data.list[0]['wind']['speed'] + 'km/h';
-          div5.innerHTML =
+          temperature.innerHTML =
+            'Température : ' + Math.round(data.list[0]['main']['temp']) + '°C';
+          humidity.innerHTML =
+            'Humidité : ' + data.list[0]['main']['humidity'] + '%';
+          wind.innerHTML =
+            'Vitesse du vent : ' + data.list[0]['wind']['speed'] + 'km/h';
+          icon.innerHTML =
             `<img src="https://openweathermap.org/img/wn/` +
             data.list[0]['weather'][0]['icon'] +
             `@2x.png">`;
+          let heure1 = document.getElementById('heure1');
+          let icon1 = document.getElementById('icon1');
+          let temp1 = document.getElementById('temp1');
+          let heure2 = document.getElementById('heure2');
+          let icon2 = document.getElementById('icon2');
+          let temp2 = document.getElementById('temp2');
+
+          heure1.innerHTML = data.list[0]['dt_txt'].slice(11, 16);
+          icon1.innerHTML =
+            `<img src="https://openweathermap.org/img/wn/` +
+            data.list[0]['weather'][0]['icon'] +
+            `@2x.png">
+          `;
+          temp1.innerHTML = Math.round(data.list[0]['main']['temp']) + '°C';
+          heure2.innerHTML = data.list[1]['dt_txt'].slice(11, 16);
+          icon2.innerHTML =
+            `<img src="https://openweathermap.org/img/wn/` +
+            data.list[1]['weather'][0]['icon'] +
+            `@2x.png">
+          `;
+          // On affiche la température en arrondissant à l'entier le plus proche
+          temp2.innerHTML = Math.round(data.list[1]['main']['temp']) + '°C';
         }
       });
   }
